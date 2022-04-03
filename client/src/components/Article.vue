@@ -1,21 +1,20 @@
 <template>
-  <div>
-    <div class="card">
-      <div class="content">{{ article.content }}</div>
-      <div class="created-at">{{ article.createdAt }}</div>
-    </div>
-  </div>
+  <div><Card :article="article" @update="updateCard" @delete="moveToHome" /></div>
 </template>
 
 <script>
+import Card from "@/components/Card";
 import axios from "axios";
 
 export default {
+  components: {
+    Card,
+  },
   name: "ArticleRouter",
   data() {
     return {
       article: {
-        id: null,
+        _id: null,
         content: null,
         createdAt: null,
       },
@@ -32,8 +31,15 @@ export default {
         ...data,
       };
     },
+    updateCard({ content }) {
+      this.article.content = content;
+    },
+    moveToHome() {
+      this.$router.push({
+        name: "Home",
+      });
+    },
   },
-  components: {},
 };
 </script>
 
