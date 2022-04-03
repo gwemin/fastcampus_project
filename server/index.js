@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
 
 app.post("/create", Article.articleCreate);
 app.get("/read", Article.articleRead);
+app.get("/read/:id", Article.articleFindOne);
 app.patch("/update", Article.articleUpdate);
 app.delete("/delete/:id", Article.articleDelete);
 

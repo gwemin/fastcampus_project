@@ -11,8 +11,7 @@ const model = (() => {
 
   // Atlas mongodb cluster와 연결
   mongoose.connect(
-    `mongodb+srv://${process.env.DB_ID}:${process.env.DB_PASSWORD}@firstvue.dzdlq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
-    { useNewUrlParser: true, useUnifiedTopology: true }
+    `mongodb+srv://${process.env.DB_ID}:${process.env.DB_PASSWORD}@firstvue.dzdlq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
   );
 
   // 스키마 연결
