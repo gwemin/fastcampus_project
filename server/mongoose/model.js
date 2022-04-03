@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const schema = required("./schema");
+const schema = require("./schema");
+require("dotenv").config();
 
 const db = mongoose.connection;
 const model = (() => {
@@ -7,9 +8,11 @@ const model = (() => {
   db.on("open", () => {
     console.log("Connecting mongodb!");
   });
+
   // Atlas mongodb cluster와 연결
   mongoose.connect(
-    `mongodb+srv://${process.env.DB_ID}:${process.env.DB_PASSWORD}@firstvuefullstackapp.dzdlq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+    `mongodb+srv://${process.env.DB_ID}:${process.env.DB_PASSWORD}@firstvue.dzdlq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+    { useNewUrlParser: true, useUnifiedTopology: true }
   );
 
   // 스키마 연결
