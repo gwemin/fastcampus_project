@@ -1,0 +1,27 @@
+{
+  "config": {
+    "target": "http://localhost:3000",
+    "phases": [{ "duration": 5, "arrivalRate": 5 }],
+    "defaults": {
+      "headers": {
+        "User-Agent": "Artillery"
+      }
+    }
+  },
+  "scenarios": [
+    {
+      "name": "Visitor",
+      "flow": [
+        {
+          "get": { "url": "/redis/2" }
+        },
+        {
+          "get": { "url": "/redis/1" }
+        },
+        {
+          "get": { "url": "/redis/3" }
+        }
+      ]
+    }
+  ]
+}
