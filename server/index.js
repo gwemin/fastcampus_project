@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const { article, user, company } = require("./router/index.js");
+const { article, user, company, board } = require("./router/index.js");
 const app = express();
 const PORT = 3000;
 
@@ -12,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(article);
 app.use(user);
 app.use(company);
+app.use(board);
 
 // 서버 상태 확인용
 app.get("/", (req, res) => {

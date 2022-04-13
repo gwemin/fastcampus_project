@@ -33,8 +33,13 @@ router.post("/user/create", async (req, res) => {
     password,
     company,
   }).save();
-  console.log(newUser);
   res.send(true);
 });
+
+// 사용자 정보 변경
+
+// 사용자 삭제
+
+// 프로필 이미지 추가
 
 module.exports = router;
