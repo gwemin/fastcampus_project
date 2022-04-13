@@ -3,7 +3,7 @@
 ---
 
 DB: MongoDB (Document DataBase)  
-Server: Node.js
+Server: Node.js  
 Client: Nuxt.js
 
 Nuxt.js 로 만들고 Next.js 로 만들어볼 생각중
