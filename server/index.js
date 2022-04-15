@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const { article, user, company, board } = require("./router/index.js");
+const { article, board, comment, company, reply, user } = require("./router/index.js");
 const app = express();
 const PORT = 3000;
 
@@ -10,9 +10,11 @@ app.use(express.urlencoded({ extended: true }));
 
 // 기능별 라우터 추가
 app.use(article);
-app.use(user);
-app.use(company);
 app.use(board);
+app.use(comment);
+app.use(company);
+app.use(reply);
+app.use(user);
 
 // 서버 상태 확인용
 app.get("/", (req, res) => {
