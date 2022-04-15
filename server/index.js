@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const { article, board, comment, company, reply, user } = require("./router/index.js");
 const app = express();
-const PORT = 3000;
+const PORT = 8080;
 
 app.use(cors());
 app.use(express.json()); // req.body
